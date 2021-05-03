@@ -18,23 +18,33 @@ import {
   FoodPricing,
 } from './styles';
 
-interface Food {
+interface Order {
   id: number;
   name: string;
   description: string;
   price: number;
   formattedPrice: string;
   thumbnail_url: string;
+  total_price: number;
 }
 
 const Orders: React.FC = () => {
-  const [orders, setOrders] = useState<Food[]>([]);
+  const [orders, setOrders] = useState<Order[]>([]);
 
   useEffect(() => {
     async function loadOrders(): Promise<void> {
-      // Load orders from API
+      // Carregando os pedidos da API
+      const response = await api.get('/orders');
+      // Definindo os pedidos incluindo
+      // Não formatamos mais o preço total, pois agora já vem formatado da API
+      setOrders(
+        response.data.map((order: Order) => ({
+          ...order,
+          formattedPrice: order.total_price,
+        }))
+      );
     }
-
+    // Chamando a função criada
     loadOrders();
   }, []);
 

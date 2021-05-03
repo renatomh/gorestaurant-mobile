@@ -44,38 +44,72 @@ interface Category {
 }
 
 const Dashboard: React.FC = () => {
+  // Estados para os pratos, categorias e categoria selecionada
   const [foods, setFoods] = useState<Food[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<
     number | undefined
   >();
+  // Estado para o campo de busca por pratos
   const [searchValue, setSearchValue] = useState('');
 
   const navigation = useNavigation();
 
+  // Função para lidar com a seleção de um prato, indo para a página com detalhes do mesmo
   async function handleNavigate(id: number): Promise<void> {
-    // Navigate do ProductDetails page
+    // Navegando para a página de detalhes dos pratos passando o id do prato selecionado
+    navigation.navigate('FoodDetails', {
+      id,
+    });
   }
 
+  // Função para buscar os pratos em função de mudanças na categoria selecionada ou no campo de busca
   useEffect(() => {
     async function loadFoods(): Promise<void> {
-      // Load Foods from API
+      // Carregando os pratos da API
+      const response = await api.get('/foods', {
+        // Definindo os parâmetros para a busca
+        params: {
+          category_like: selectedCategory,
+          name_like: searchValue,
+        },
+      });
+      // Definindo os pratos incluindo ainda o preço formatado
+      setFoods(
+        response.data.map((food: Food) => ({
+          ...food,
+          formattedPrice: formatValue(food.price)
+        }))
+      );
     }
-
+    // Chamando a função criada
     loadFoods();
   }, [selectedCategory, searchValue]);
 
+  // Função para buscar e configurar as categorias da API
   useEffect(() => {
     async function loadCategories(): Promise<void> {
-      // Load categories from API
+      // Carregando as categorias da API
+      const response = await api.get('/categories');
+      // Definindo as categorias obtidas
+      setCategories(response.data);
     }
-
+    // Chamando a função criada
     loadCategories();
   }, []);
 
+  // Função para definir a categoria selecionada para a busca na API
   function handleSelectCategory(id: number): void {
-    // Select / deselect category
-  }
+    // Caso selecione a categoria já selecionada
+    if (selectedCategory == id) {
+      // Retiramos a seleção da mesma
+      setSelectedCategory(undefined);
+    }
+    // Caso não seja, selecionamos a categoria
+    else {
+      setSelectedCategory(id);
+    }
+  };
 
   return (
     <Container>
@@ -89,6 +123,7 @@ const Dashboard: React.FC = () => {
         />
       </Header>
       <FilterContainer>
+        {/* Campo para busca dos pratos */}
         <SearchInput
           value={searchValue}
           onChangeText={setSearchValue}
