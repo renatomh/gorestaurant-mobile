@@ -26,7 +26,7 @@
       "name": "Veggie",
       "description": "Macarrão com pimentão, ervilha e ervas finas colhidas no himalaia.",
       "price": 21.9,
-      "category": 2,
+      "category": 1,
       "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food2.png",
       "thumbnail_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-gorestaurant-mobile/veggie.png",
       "extras": [
@@ -42,7 +42,7 @@
       "name": "A la Camarón",
       "description": "Macarrão com vegetais de primeira linha e camarão dos 7 mares.",
       "price": 25.9,
-      "category": 3,
+      "category": 1,
       "image_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-food/food3.png",
       "thumbnail_url": "https://storage.googleapis.com/golden-wind/bootcamp-gostack/desafio-gorestaurant-mobile/camarao.png",
       "extras": [
@@ -50,6 +50,80 @@
           "id": 4,
           "name": "Bacon",
           "value": 1.5
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Pizza Calabresa",
+      "description": "Pizza de Calabresa.",
+      "price": 32.5,
+      "category": 2,
+      "image_url": "https://lh5.googleusercontent.com/p/AF1QipOjTb4I2U9zDLhSKvw_JF31H3Aqz-q4z7SbaRc=w650-h432-k-no",
+      "thumbnail_url": "https://lh5.googleusercontent.com/p/AF1QipOjTb4I2U9zDLhSKvw_JF31H3Aqz-q4z7SbaRc=w650-h432-k-no",
+      "extras": [
+        {
+          "id": 5,
+          "name": "Azeitona",
+          "value": 1.25
+        },
+        {
+          "id": 6,
+          "name": "Cebola Roxa",
+          "value": 1.45
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Pizza Margherita",
+      "description": "Pizza de Margherita.",
+      "price": 29.5,
+      "category": 2,
+      "image_url": "https://static.clubedaanamariabraga.com.br/wp-content/uploads/2020/08/pizza-margherita.jpg",
+      "thumbnail_url": "https://static.clubedaanamariabraga.com.br/wp-content/uploads/2020/08/pizza-margherita.jpg",
+      "extras": [
+        {
+          "id": 7,
+          "name": "Azeitona",
+          "value": 1.25
+        },
+        {
+          "id": 8,
+          "name": "Manjericão",
+          "value": 2.15
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Filé ao Molho Madeira",
+      "description": "Delicioso filé ao molho madeira acompanhado de legumes.",
+      "price": 39.75,
+      "category": 3,
+      "image_url": "https://img.itdg.com.br/tdg/images/blog/uploads/2018/01/file-mignon-ao-molho-madeira-como-fazer.jpg?w=1200",
+      "thumbnail_url": "https://img.itdg.com.br/tdg/images/blog/uploads/2018/01/file-mignon-ao-molho-madeira-como-fazer.jpg",
+      "extras": [
+        {
+          "id": 9,
+          "name": "Risoto de Aspargos",
+          "value": 14.5
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Frango ao Molho de Cogumelos",
+      "description": "Sobrecoxa de frango ao molho de cogumelos paris frescos.",
+      "price": 36.5,
+      "category": 3,
+      "image_url": "https://t1.rg.ltmcdn.com/pt/posts/0/0/8/coxas_de_frango_ao_molho_de_cogumelos_3800_600.jpg",
+      "thumbnail_url": "https://t1.rg.ltmcdn.com/pt/posts/0/0/8/coxas_de_frango_ao_molho_de_cogumelos_3800_600.jpg",
+      "extras": [
+        {
+          "id": 10,
+          "name": "Farofa de Bacon",
+          "value": 10.75
         }
       ]
     }
@@ -155,11 +229,8 @@
       "id": 4,
       "quantity": 2,
       "total_price": "R$46,80"
-    }
-  ],
-  "favorites": [
+    },
     {
-      "id": 2,
       "name": "Veggie",
       "description": "Macarrão com pimentão, ervilha e ervas finas colhidas no himalaia.",
       "price": 21.9,
@@ -173,7 +244,85 @@
           "value": 1.5
         }
       ],
-      "formattedPrice": "R$21,90"
+      "formattedPrice": "R$21,90",
+      "product_id": 2,
+      "id": 5,
+      "quantity": 1,
+      "total_price": "R$26,40"
+    },
+    {
+      "name": "Pizza Calabresa",
+      "description": "Pizza de Calabresa.",
+      "price": 32.5,
+      "category": 2,
+      "image_url": "https://lh5.googleusercontent.com/p/AF1QipOjTb4I2U9zDLhSKvw_JF31H3Aqz-q4z7SbaRc=w650-h432-k-no",
+      "thumbnail_url": "https://lh5.googleusercontent.com/p/AF1QipOjTb4I2U9zDLhSKvw_JF31H3Aqz-q4z7SbaRc=w650-h432-k-no",
+      "extras": [
+        {
+          "id": 5,
+          "name": "Azeitona",
+          "value": 1.25
+        },
+        {
+          "id": 6,
+          "name": "Cebola Roxa",
+          "value": 1.45
+        }
+      ],
+      "formattedPrice": "R$32,50",
+      "product_id": 4,
+      "id": 6,
+      "quantity": 2,
+      "total_price": "R$70,40"
+    },
+    {
+      "name": "Pizza Calabresa",
+      "description": "Pizza de Calabresa.",
+      "price": 32.5,
+      "category": 2,
+      "image_url": "https://lh5.googleusercontent.com/p/AF1QipOjTb4I2U9zDLhSKvw_JF31H3Aqz-q4z7SbaRc=w650-h432-k-no",
+      "thumbnail_url": "https://lh5.googleusercontent.com/p/AF1QipOjTb4I2U9zDLhSKvw_JF31H3Aqz-q4z7SbaRc=w650-h432-k-no",
+      "extras": [
+        {
+          "id": 5,
+          "name": "Azeitona",
+          "value": 1.25
+        },
+        {
+          "id": 6,
+          "name": "Cebola Roxa",
+          "value": 1.45
+        }
+      ],
+      "formattedPrice": "R$32,50",
+      "product_id": 4,
+      "id": 7,
+      "quantity": 1,
+      "total_price": "R$33,75"
+    }
+  ],
+  "favorites": [
+    {
+      "id": 4,
+      "name": "Pizza Calabresa",
+      "description": "Pizza de Calabresa.",
+      "price": 32.5,
+      "category": 2,
+      "image_url": "https://lh5.googleusercontent.com/p/AF1QipOjTb4I2U9zDLhSKvw_JF31H3Aqz-q4z7SbaRc=w650-h432-k-no",
+      "thumbnail_url": "https://lh5.googleusercontent.com/p/AF1QipOjTb4I2U9zDLhSKvw_JF31H3Aqz-q4z7SbaRc=w650-h432-k-no",
+      "extras": [
+        {
+          "id": 5,
+          "name": "Azeitona",
+          "value": 1.25
+        },
+        {
+          "id": 6,
+          "name": "Cebola Roxa",
+          "value": 1.45
+        }
+      ],
+      "formattedPrice": "R$32,50"
     }
   ]
 }
